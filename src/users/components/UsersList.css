@@ -1,22 +1,10 @@
 .users-list {
-    list-style: none;
-    margin: 0 auto;
-    padding-left: 50rem ;
-    width: 90%;
-    max-width: 50rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-
-.user-item {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 2rem 0;
-
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  width: 90%;
+  max-width: 50rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
-
-

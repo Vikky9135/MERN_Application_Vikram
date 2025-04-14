@@ -5,7 +5,7 @@ const Users = () => {
 
     const USERS = [
         {
-            id: 'ul', 
+            id: 'u1', 
             name: 'Vikram', 
             image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTc9APxkj0xClmrU3PpMZglHQkx446nQPG6lA&s', 
             places: 3
