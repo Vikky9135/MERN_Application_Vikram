@@ -1,13 +1,17 @@
 import React, { useRef, useEffect } from 'react';
- 
 import './Map.css';
- 
+
 const Map = props => {
   const mapRef = useRef();
-  
   const { center, zoom } = props;
- 
+
   useEffect(() => {
+    // ✅ Check if OpenLayers is available
+    if (!window.ol || !window.ol.Map || !window.ol.layer || !window.ol.source || !window.ol.View) {
+      console.warn('OpenLayers (ol) is not available.');
+      return;
+    }
+
     new window.ol.Map({
       target: mapRef.current.id,
       layers: [
@@ -21,15 +25,19 @@ const Map = props => {
       })
     });
   }, [center, zoom]);
- 
+
+  const isOLAvailable = window.ol && window.ol.Map;
+
   return (
     <div
       ref={mapRef}
       className={`map ${props.className}`}
       style={props.style}
       id="map"
-    ></div>
+    >
+      {!isOLAvailable && <p>🗺️ Map is unavailable. Please try again later.</p>}
+    </div>
   );
 };
- 
+
 export default Map;
